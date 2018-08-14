@@ -96,46 +96,28 @@
 //first unique character function tetsing
 const firstUniqueCharacter = require('../lib/unique-character.js')
 describe('return the first unique character in string', () => {
-  describe('when entering a string with repeated characters', () => {
-    it('should return the first unrepeated caracter', () => {
+  describe('when entering a string with all the same characters', () => {
+    it('should return 0', () => {
+      const result = firstUniqueCharacter('aaaaa')
+      expect(result).toEqual(0)
+    })
+  })
+  describe('when entering a string with a uique character', () => {
+    it('should return the character', () => {
       const result = firstUniqueCharacter('aabbcdd')
       expect(result).toEqual('c')
     })
   })
-  describe('when entering a string with no repeated characters', () => {
+  describe('when entering a string with multiple unique characters', () => {
+    it('should return the first unique character', () => {
+      const result = firstUniqueCharacter('aabccdee')
+      expect(result).toEqual('b')
+    })
+  })
+  describe('when entering a string with no unique character', () => {
     it('should return the first character', () => {
       const result = firstUniqueCharacter('abcde')
       expect(result).toEqual('a')
-    })
-  })
-  describe('when entering an empty string', () => {
-    it('should return 0', () => {
-      const result = firstUniqueCharacter('')
-      expect(result).toEqual(0)
-    })
-  })
-  describe('when calle without an argument', () => {
-    it('should return 0', () => {
-      const result = firstUniqueCharacter()
-      expect(result).toEqual(0)
-    })
-  })
-  describe('when entering a string of numbers', () => {
-    it('should return the first number', () => {
-      const result = firstUniqueCharacter('4321')
-      expect(result).toEqual('4')
-    })
-  })
-  describe('when entering numbers', () => {
-    it('should return0', () => {
-      const result = firstUniqueCharacter(4321)
-      expect(result).toEqual(0)
-    })
-  })
-  describe('when entering a string with capitalized letters', () => {
-    it('should return the first unrepeated character capitalized', () => {
-      const result = firstUniqueCharacter('MY NAME IS EFFAT')
-      expect(result).toEqual('Y')
     })
   })
 })
