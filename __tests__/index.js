@@ -93,31 +93,50 @@
 //   })
 // })
 
-//first unique character function tetsing
-const unique = require('../lib/unique-character.js')
-describe('return the first unique character in string', () => {
-  describe('when entering a string with all the same characters', () => {
-    it('should return undefined', () => {
-      const result = unique('aaaaa')
-      expect(result).toBeDefined()
+// //first unique character function tetsing
+// const unique = require('../lib/unique-character.js')
+// describe('return the first unique character in string', () => {
+//   describe('when entering a string with all the same characters', () => {
+//     it('should return undefined', () => {
+//       const result = unique('aaaaa')
+//       expect(result).toBeDefined()
+//     })
+//   })
+//   describe('when entering a string with a uique character', () => {
+//     it('should return the character', () => {
+//       const result = unique('aabbcdd')
+//       expect(result).toEqual('c')
+//     })
+//   })
+//   describe('when entering a string with multiple unique characters', () => {
+//     it('should return the first unique character', () => {
+//       const result = unique('aabccdee')
+//       expect(result).toEqual('b')
+//     })
+//   })
+//   describe('when entering a string with no unique character', () => {
+//     it('should return the first character', () => {
+//       const result = unique('abcde')
+//       expect(result).toEqual('a')
+//     })
+//   })
+// })
+
+
+// first positive integer function testing
+const first = require('../lib/minimal-num.js')
+describe('return the first minimal positive integer greater than 0 that does not occur in the array.', () => {
+  describe('when entering an empty array', () => {
+    it('should return null', () => {
+      const result = first([])
+      expect(result).toEqual(null)
     })
   })
-  describe('when entering a string with a uique character', () => {
-    it('should return the character', () => {
-      const result = unique('aabbcdd')
-      expect(result).toEqual('c')
-    })
-  })
-  describe('when entering a string with multiple unique characters', () => {
-    it('should return the first unique character', () => {
-      const result = unique('aabccdee')
-      expect(result).toEqual('b')
-    })
-  })
-  describe('when entering a string with no unique character', () => {
-    it('should return the first character', () => {
-      const result = unique('abcde')
-      expect(result).toEqual('a')
-    })
-  })
+  // describe('when entering an empty array', () => {
+  //   it('should return 1', () => {
+  //     const result = first([])
+  //     expect(result).toEqual(null)
+  //   })
+  // })
+
 })
