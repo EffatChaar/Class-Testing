@@ -51,44 +51,91 @@
 //   })
 // })
 
-//string compressing function testing
-const stringCompress = require('../lib/string-compress.js')
-describe('string compressing', () => {
-  describe('when entering a string with repeated characters', () => {
-    it('should count characters in place', () => {
-      const result = stringCompress('aabbccaadd')
-      expect(result).toEqual('a2b2c2a2d2')
-    })
-  })
+// //string compressing function testing
+// const stringCompress = require('../lib/string-compress.js')
+// describe('string compressing', () => {
+//   describe('when entering a string with repeated characters', () => {
+//     it('should count characters in place', () => {
+//       const result = stringCompress('aabbccaadd')
+//       expect(result).toEqual('a2b2c2a2d2')
+//     })
+//   })
+//
+//   describe('when entering a string with numbers', () => {
+//     it('should return 0', () => {
+//       const result = stringCompress('111222')
+//       expect(result).toEqual(0)
+//     })
+//   })
+//   describe('when entering not a string', () => {
+//     it('should return 0', () => {
+//       const result = stringCompress(420)
+//       expect(result).toEqual(0)
+//     })
+//   })
+//   describe('when entering string contains capitalization, punctuation, and/or spaces ...', () => {
+//     it('should ignore those and count the letters', () => {
+//       const result = stringCompress('Hello World!')
+//       expect(result).toEqual('H1e1l2o1W1o1r1l1d1')
+//     })
+//   })
+//   describe('when is called without argument', () => {
+//     it('should return 0', () => {
+//       const result = stringCompress()
+//       expect(result).toEqual(0)
+//     })
+//   })
+//   describe('when is called with an empty string', () => {
+//     it('should return 0', () => {
+//       const result = stringCompress('')
+//       expect(result).toEqual(0)
+//     })
+//   })
+// })
 
-  describe('when entering a string with numbers', () => {
+//first unique character function tetsing
+const firstUniqueCharacter = require('../lib/unique-character.js')
+describe('return the first unique character in string', () => {
+  describe('when entering a string with repeated characters', () => {
+    it('should return the first unrepeated caracter', () => {
+      const result = firstUniqueCharacter('aabbcdd')
+      expect(result).toEqual('c')
+    })
+  })
+  describe('when entering a string with no repeated characters', () => {
+    it('should return the first character', () => {
+      const result = firstUniqueCharacter('abcde')
+      expect(result).toEqual('a')
+    })
+  })
+  describe('when entering an empty string', () => {
     it('should return 0', () => {
-      const result = stringCompress('111222')
+      const result = firstUniqueCharacter('')
       expect(result).toEqual(0)
     })
   })
-  describe('when entering not a string', () => {
+  describe('when calle without an argument', () => {
     it('should return 0', () => {
-      const result = stringCompress(420)
+      const result = firstUniqueCharacter()
       expect(result).toEqual(0)
     })
   })
-  describe('when entering string contains capitalization, punctuation, and/or spaces ...', () => {
-    it('should ignore those and count the letters', () => {
-      const result = stringCompress('Hello World!')
-      expect(result).toEqual('h1e1l2o1w1o1r1l1d1')
+  describe('when entering a string of numbers', () => {
+    it('should return the first number', () => {
+      const result = firstUniqueCharacter('4321')
+      expect(result).toEqual('4')
     })
   })
-  describe('when is called without argument', () => {
-    it('should return 0', () => {
-      const result = stringCompress()
+  describe('when entering numbers', () => {
+    it('should return0', () => {
+      const result = firstUniqueCharacter(4321)
       expect(result).toEqual(0)
     })
   })
-  describe('when is called with an empty string', () => {
-    it('should return 0', () => {
-      const result = stringCompress('')
-      expect(result).toEqual(0)
+  describe('when entering a string with capitalized letters', () => {
+    it('should return the first unrepeated character capitalized', () => {
+      const result = firstUniqueCharacter('MY NAME IS EFFAT')
+      expect(result).toEqual('Y')
     })
   })
 })
