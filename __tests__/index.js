@@ -53,9 +53,9 @@ describe('palindrome', () => {
 const stringCompress = require('../lib/string-compress.js')
 describe('string compressing', () => {
   describe('when entering a string with repeated characters', () => {
-    it('should return true', () => {
+    it('should return new string that numerically indicates any repeated characters', () => {
       const result = stringCompress('aaabbbddd')
-      expect(result).toEqual(true)
+      expect(result).toEqual('a3b3d3')
     })
   })
 })
