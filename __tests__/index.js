@@ -38,14 +38,23 @@ describe('frogJumps', () => {
   })
 })
 
-
-
-
+// palindrome function testing
 const palindrome = require('../lib/palindrome.js')
 describe('palindrome', () => {
-  describe('something', () => {
-    it('should return true', () => {
+  describe('When entering a string of a word or a sentence', () => {
+    it('should return whether it is a palindrome', () => {
       const result = palindrome('Mom mom')
+      expect(result).toEqual(true)
+    })
+  })
+})
+
+//string compressing function testing
+const stringCompress = require('../lib/string-compress.js')
+describe('string compressing', () => {
+  describe('when entering a string with repeated characters', () => {
+    it('should return true', () => {
+      const result = stringCompress('aaabbbddd')
       expect(result).toEqual(true)
     })
   })
