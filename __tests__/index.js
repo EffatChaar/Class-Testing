@@ -94,29 +94,29 @@
 // })
 
 //first unique character function tetsing
-const firstUniqueCharacter = require('../lib/unique-character.js')
+const unique = require('../lib/unique-character.js')
 describe('return the first unique character in string', () => {
   describe('when entering a string with all the same characters', () => {
-    it('should return 0', () => {
-      const result = firstUniqueCharacter('aaaaa')
-      expect(result).toEqual(0)
+    it('should return undefined', () => {
+      const result = unique('aaaaa')
+      expect(result).toBeDefined()
     })
   })
   describe('when entering a string with a uique character', () => {
     it('should return the character', () => {
-      const result = firstUniqueCharacter('aabbcdd')
+      const result = unique('aabbcdd')
       expect(result).toEqual('c')
     })
   })
   describe('when entering a string with multiple unique characters', () => {
     it('should return the first unique character', () => {
-      const result = firstUniqueCharacter('aabccdee')
+      const result = unique('aabccdee')
       expect(result).toEqual('b')
     })
   })
   describe('when entering a string with no unique character', () => {
     it('should return the first character', () => {
-      const result = firstUniqueCharacter('abcde')
+      const result = unique('abcde')
       expect(result).toEqual('a')
     })
   })
